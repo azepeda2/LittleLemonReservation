@@ -10,6 +10,8 @@ const BookingForm = () => {
     guests: '2',
   });
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -22,6 +24,20 @@ const BookingForm = () => {
     e.preventDefault();
     console.log('Reservation submitted:', formData);
     // Here you would typically send the data to a server or perform other actions
+    setFormData({
+      name: '',
+      email: '',
+      date: '',
+      time: '',
+      guests: '2',
+    });
+    // Show success message
+    setShowSuccess(true);
+
+    // Hide success message after 3 seconds
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 3000);
   };
 
   return (
@@ -115,6 +131,7 @@ const BookingForm = () => {
               Reserve Table
             </button>
           </form>
+          {showSuccess && <p className="success-message">Reservation successful!</p>}
         </div>
       </div>
     </div>

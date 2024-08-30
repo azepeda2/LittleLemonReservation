@@ -5,7 +5,11 @@
 
 
 .booking-container {
-  background-color: #fef3c7;
+  background-image: url('./images/greeksalad.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
   padding: 3rem 1rem;
   display: flex;
@@ -133,16 +137,17 @@ input:focus, select:focus {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  background-color: green;
+  background-color: #4CAF50; /* A more vibrant green */
+  padding: 10px 0; /* Add some vertical padding */
 }
 
 .header__menu li a {
   color: #ffffff;
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 15px; /* Increase padding for better clickability */
   transition: all 0.3s ease;
 }
 
 .header__menu li a:hover {
-  background-color: green;
+  background-color: #45a049; /* Slightly darker green for hover effect */
 }
